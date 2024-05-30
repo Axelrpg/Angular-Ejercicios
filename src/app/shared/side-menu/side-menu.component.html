@@ -1,0 +1,16 @@
+<!-- component -->
+<div class="min-h-screen z-10 flex items-start justify-center bg-gray-100 py-6 w-64 left-0 h-screen overflow-y-scroll">
+    <div class="flex w-full max-w-xs px-4 bg-gray-100">
+        <ul class="flex flex-col w-full">
+            @for (item of menuItems; track $index) {
+            <li class="my-px mb-2">
+                <a [routerLink]="item.path" routerLinkActive="bg-gray-200" href="#" class="flex flex-col items-start justify-center h-12 px-2 rounded-lg text-gray-600 bg-white">
+                    <span class="ml-3">
+                        {{item.title}}
+                    </span>
+                </a>
+            </li>
+            }
+        </ul>
+    </div>
+</div>

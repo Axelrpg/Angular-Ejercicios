@@ -1,0 +1,59 @@
+<app-title title="Pipes"/>
+
+<section>
+  <p>
+    Pipes en cadenas de texto:
+  </p>
+  <p>
+    Texto original: {{ text }}
+  </p>
+  <p>
+    Texto en mayúsculas: {{ text | uppercase }}
+  </p>
+  <p>
+    Texto en minúsculas: {{ text | lowercase }}
+  </p>
+</section>
+
+<br>
+
+<section>
+  <p>
+    Pipes en fecha:
+  </p>
+  <p>
+    Fecha original: {{ currentDate }}
+  </p>
+  <p>
+    Fecha en formato de fecha: {{ currentDate | date }}
+  </p>
+  <p>
+    Fecha en formato de fecha corta: {{ currentDate | date:'short' }}
+  </p>
+  <p>
+    Fecha en formato de fecha larga: {{ currentDate | date:'full' }}
+  </p>
+  <p>
+    Fecha en formato personalizado: {{ currentDate | date:'dd/MM/yyyy' }}
+  </p>
+  <p>
+    Fecha en formato personalizado: {{ currentDate | date:'dd/MM/yyyy HH:mm:ss' }}
+  </p>
+</section>
+
+<br>
+
+<section>
+  <p>
+    Pipes en números:
+  </p>
+  <p>
+    Número original: {{ amount }}
+  </p>
+  <p>
+    Número en moneda: {{ amount | currency }}
+  </p>
+  <p>
+    Número en moneda: {{ amount | currency:'EUR':'symbol':'1.2-2' }}
+  </p>
+</section>

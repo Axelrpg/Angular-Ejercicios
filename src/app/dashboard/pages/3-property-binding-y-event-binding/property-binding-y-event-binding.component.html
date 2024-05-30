@@ -1,0 +1,15 @@
+<app-title title="Property Binding y Event Binding"/>
+
+<section>
+  <button #btnInteraction class="p-2 bg-gray-500 hover:bg-gray-700 transition-all rounded text-white my-2">
+    Haz click aquí
+  </button>
+
+  @defer (on interaction(btnInteraction)) {
+    <p class="text-green-500">¡Haz hecho click!</p>
+    <br>
+  } @placeholder {
+    <p class="text-red-500">¡Esperando click!</p>
+    <br>
+  }
+</section>

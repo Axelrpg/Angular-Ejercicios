@@ -1,0 +1,32 @@
+<app-title title="Directivas estructurales"/>
+
+<section>
+
+  <p>
+    Condición IF: {{ifCondition}}
+  </p>
+
+  @if (ifCondition > 5) {
+    <p>
+      El valor de la condición es mayor a 5
+    </p>
+  } @else {
+    <p>
+      El valor de la condición es menor o igual a 5
+    </p>
+  }
+</section>
+
+<br>
+
+<section>
+  <p>
+    Condición FOR: {{forCondition}}
+  </p>
+
+  @for (number of forCondition; track $index) {
+    <p>
+      5 x {{ $index + 1 }} = {{ 5 * ($index + 1) }}
+    </p>
+  }
+</section>
