@@ -36,6 +36,11 @@ export const routes: Routes = [
                 loadComponent: () => import('./dashboard/pages/6-reactive-form/reactive-form.component')
             },
             {
+                path: 'environment-variables',
+                title: 'Variables de Entorno',
+                loadComponent: () => import('./dashboard/pages/environment-variables/environment-variables.component')
+            },
+            {
                 path: '',
                 redirectTo: '1-hello-world',
                 pathMatch: 'full'

@@ -1,0 +1,9 @@
+<app-title title="Obtencion de datos mediante variables de entorno" />
+
+<ul>
+  @for (user of usersServices.users(); track $index) {
+    <li>
+      <strong>{{ $index + 1 }}</strong> - {{ user.first_name }} {{ user.last_name }}
+    </li>
+  }
+</ul>
