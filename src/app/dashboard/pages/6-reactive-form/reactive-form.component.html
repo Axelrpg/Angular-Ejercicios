@@ -1,7 +1,7 @@
 <app-title title="Formulario Reactivo" />
 
 <div class="max-w-md mx-auto p-4">
-  <form (formGroup)="reactiveForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
 
     <div class="mb-4">
       <label for="name" class="block text-sm font-medium text-gray-700">
@@ -49,7 +49,72 @@
       }
     </div>
 
-    <button type="submit" class="w-full px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
+    <div class="mb-4">
+      <label for="password" class="block text-sm font-medium text-gray-700">
+        Contraseña
+      </label>
+      <input type="password" id="password" formControlName="password"
+        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:border-blue-300">
+
+      @if (reactiveForm.get('password')?.invalid && reactiveForm.get('password')?.touched) {
+
+      @if (reactiveForm.get('password')?.errors?.["required"]) {
+      <div class="text-red-500 text-sm">
+        La contraseña es requerida
+      </div>
+      }
+
+      @if (reactiveForm.get('password')?.errors?.["minlength"]) {
+      <div class="text-red-500 text-sm">
+        La contraseña debe tener al menos 6 caracteres
+      </div>
+      }
+      }
+    </div>
+
+    <div class="mb-4">
+      <label for="confirmPassword" class="block text-sm font-medium text-gray-700">
+        Confirmar Contraseña
+      </label>
+      <input type="password" id="confirmPassword" formControlName="confirmPassword"
+        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:border-blue-300">
+
+      @if (reactiveForm.get('confirmPassword')?.invalid && reactiveForm.get('confirmPassword')?.touched) {
+
+      @if (reactiveForm.get('confirmPassword')?.errors?.["required"]) {
+      <div class="text-red-500 text-sm">
+        La confirmación de la contraseña es requerida
+      </div>
+      }
+      }
+    </div>
+
+    <div class="mb-4">
+      <label for="phone" class="block text-sm font-medium text-gray-700">
+        Teléfono
+      </label>
+      <input type="number" id="phone" formControlName="phone"
+        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:border-blue-300">
+
+      @if (reactiveForm.get('phone')?.invalid && reactiveForm.get('phone')?.touched) {
+
+      @if (reactiveForm.get('phone')?.errors?.["required"]) {
+      <div class="text-red-500 text-sm">
+        El teléfono es requerido
+      </div>
+      }
+
+      @if (reactiveForm.get('phone')?.errors?.["pattern"]) {
+      <div class="text-red-500 text-sm">
+        El teléfono no es válido
+      </div>
+      }
+      }
+    </div>
+
+    <button type="submit" [disabled]="reactiveForm.invalid"
+      class="w-full px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+      [class.opacity-50]="reactiveForm.invalid">
       Enviar
     </button>
   </form>

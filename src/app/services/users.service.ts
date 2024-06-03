@@ -1,7 +1,7 @@
 import { Injectable, Signal, computed, inject, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environmentDev } from '../../environments/environments.dev';
 import { User } from '../interfaces/Users';
+import { environment } from '../../environments/environment';
 
 interface State {
   users: User[];
@@ -15,7 +15,7 @@ export class UsersService {
 
   private httpClient = inject(HttpClient);
 
-  private apiUrl = environmentDev.apiUrl;
+  private apiUrl = environment.apiUrl;
 
   #state = signal<State>({
     users: [],

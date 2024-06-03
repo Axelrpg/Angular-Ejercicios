@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TitleComponent } from '../../../shared/title/title.component';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-6-reactive-form',
@@ -9,6 +9,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   imports: [
     CommonModule,
     TitleComponent,
+    ReactiveFormsModule,
   ],
   templateUrl: './reactive-form.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
