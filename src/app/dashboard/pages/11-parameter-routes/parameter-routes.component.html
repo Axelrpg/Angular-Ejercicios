@@ -1,0 +1,8 @@
+<app-title title="Rutas con parámetros" />
+
+<div class="max-w-md mx-auto p-4 flex flex-col" style="view-transition-name: object;">
+    <input type="text" [(ngModel)]="parameter" class="border rounded py-2 px-4 w-full mb-2">
+    <button (click)="navigateWithParams()" class="bg-blue-500 text-white font-bold py-2 px-4 rounded">
+        Ir a la ruta con parámetro
+    </button>
+</div>

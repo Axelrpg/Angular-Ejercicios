@@ -1,11 +1,13 @@
 import { NgModule } from "@angular/core";
-import { ReactiveFormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
     imports: [
-        ReactiveFormsModule
+        FormsModule,
+        ReactiveFormsModule,
     ],
-    declarations: [],
+    declarations: [
+    ],
     providers: [],
     bootstrap: []
 })

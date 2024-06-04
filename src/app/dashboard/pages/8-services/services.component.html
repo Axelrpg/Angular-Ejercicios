@@ -1,0 +1,23 @@
+<app-title title="Servicios"/>
+
+<p>
+    En esta página se utilizan servicios para obtener datos locales.
+</p>
+
+<ul>
+    @for (person of persons; track $index) {
+        <li class="flex items-center my-2">
+            <p class="mx-5 hover:underline">
+                <strong>Nombre:</strong> {{person.firstName}} {{person.lastName}}
+            </p>
+            <p>
+                <strong>Edad:</strong> {{person.age}} años
+            </p>
+        </li>
+    }
+    @empty {
+        <p>
+            Obteniendo lista...
+        </p>
+    }
+</ul>

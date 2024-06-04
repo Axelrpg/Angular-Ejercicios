@@ -1,39 +1,39 @@
 import { Injectable, computed, inject, signal } from '@angular/core';
+import { Unknown } from '../interfaces/Unknown';
 import { HttpClient } from '@angular/common/http';
-import { User } from '../interfaces/Users';
 import { environment } from '../../environments/environment';
 
 interface State {
-  users: User[];
+  unknowns: Unknown[];
   loading: boolean;
 }
 
 @Injectable({
   providedIn: 'root'
 })
-export class UsersService {
+export class UnknownService {
 
   private httpClient = inject(HttpClient);
 
   private apiUrl = environment.apiUrl;
-  private endpoint = this.apiUrl + 'api/users?page=1'
+  private endpoint = this.apiUrl + 'api/unknown';
 
   #state = signal<State>({
-    users: [],
+    unknowns: [],
     loading: true
   });
 
-  public users = computed(() => this.#state().users);
+  public unknowns = computed(() => this.#state().unknowns);
   public loading = computed(() => this.#state().loading);
 
   constructor() {
     this.httpClient.get(this.endpoint)
-      .subscribe((response: any) => {
-        this.#state.set({
-          users: response.data,
-          loading: false
-        });
+    .subscribe((response: any) => {
+      this.#state.set({
+        unknowns: response.data,
+        loading: false
       });
+    });
   }
 
 }

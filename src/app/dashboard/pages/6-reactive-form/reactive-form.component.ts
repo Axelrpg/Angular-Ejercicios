@@ -29,7 +29,6 @@ export default class ReactiveFormComponent {
   }
   
   onSubmit() {
-    console.log('Formulario', this.reactiveForm);
     if (this.reactiveForm.valid) {
       console.log('Formulario válido', this.reactiveForm.value);
       return this.reactiveForm.value;

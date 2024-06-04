@@ -15,7 +15,7 @@ import { UsersService } from '../../../services/users.service';
 })
 export default class EnvironmentVariablesComponent {
 
-  usersServices = inject(UsersService);
+  public usersServices = inject(UsersService);
 
   constructor() {
     setTimeout(() => {

@@ -1,0 +1,21 @@
+<app-title title="Servicios" />
+
+<p>
+    En esta página se utilizan servicios para obtener datos de una API externa.
+</p>
+
+<ul>
+    @for (unknown of unknownsService.unknowns(); track $index) {
+    <li class="flex items-center my-2">
+        <p class="mx-5 hover:underline" [ngStyle]="{'color': unknown.color}">
+            {{ unknown.name }} - {{ unknown.year }}
+        </p>
+    </li>
+    }
+
+    @empty {
+    <p>
+        Cargando...
+    </p>
+    }
+</ul>
