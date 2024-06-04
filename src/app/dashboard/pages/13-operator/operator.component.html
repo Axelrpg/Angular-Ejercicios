@@ -1,0 +1,19 @@
+<app-title title="Operator"></app-title>
+
+<div class="p-4 bg-gray-200">
+  <h2>Datos originales</h2>
+  <ul>
+    @for (item of allData; track $index) {
+    <li>{{ item.id }}- {{item.name}} {{item.category}}</li>
+    }
+  </ul>
+</div>
+
+<div class="p-4 bg-gray-200">
+  <h2>Datos filtrados con la categoría "A"</h2>
+  <ul>
+    @for (item of dataObtained; track $index) {
+    <li>{{ item.id }}- {{item.name}} {{item.category}}</li>
+    }
+  </ul>
+</div>

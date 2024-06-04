@@ -20,7 +20,6 @@ export default class ParameterViewComponent {
   public parameter: string = '';
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router){
-    console.log(activatedRoute.snapshot.params);
     this.parameter = this.activatedRoute.snapshot.params['parameter'];
   }
 

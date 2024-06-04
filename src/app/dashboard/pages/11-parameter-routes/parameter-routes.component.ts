@@ -24,7 +24,6 @@ export default class ParameterRoutesComponent {
   constructor(private router: Router){}
 
   navigateWithParams() {
-    console.log('this.parameter', this.parameter);
     this.router.navigate(['dashboard/11-parameter-routes', this.parameter]);
   }
 

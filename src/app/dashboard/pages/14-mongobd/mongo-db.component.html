@@ -1,0 +1,24 @@
+<app-title title="MongoDB"></app-title>
+
+<p>
+  En esta página se muestra un ejemplo de cómo se puede consumir datos de una base de datos MongoDB.
+</p>
+
+<ul>
+  @for (data of mongoDbService.data(); track $index) {
+  <li class="flex items-center my-2">
+    <p class="mx-5 hover:underline">
+      <strong>Primer nombre: </strong>{{data.name}}
+    </p>
+    <p class="mx-5 hover:underline">
+      <strong>Apellido: </strong>{{data.lastname}}
+    </p>
+  </li>
+  }
+
+  @empty {
+  <p>
+    Cargando...
+  </p>
+  }
+</ul>

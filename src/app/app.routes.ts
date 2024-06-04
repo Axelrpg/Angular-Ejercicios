@@ -71,6 +71,21 @@ export const routes: Routes = [
                 loadComponent: () => import('./dashboard/pages/11-parameter-view/parameter-view.component')
             },
             {
+                path: '12-observables',
+                title: 'Observables',
+                loadComponent: () => import('./dashboard/pages/12-observables/observables.component')
+            },
+            {
+                path: '13-operator',
+                title: 'Operadores',
+                loadComponent: () => import('./dashboard/pages/13-operator/operator.component')
+            },
+            {
+                path: '14-mongobd',
+                title: 'MongoDB',
+                loadComponent: () => import('./dashboard/pages/14-mongobd/mongo-db.component')
+            },
+            {
                 path: 'environment-variables',
                 title: 'Variables de Entorno',
                 loadComponent: () => import('./dashboard/pages/environment-variables/environment-variables.component')

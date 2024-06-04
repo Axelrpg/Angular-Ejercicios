@@ -1,0 +1,12 @@
+<app-title title="Observables"></app-title>
+
+<div class="p-4 bg-gray-200">
+  <h2>Datos recibidos:</h2>
+  <ul>
+    @for (data of dataObtained; track $index) {
+    <li>
+      <span>{{ data.id }}- {{data.name}}</span>
+    </li>
+    }
+  </ul>
+</div>
